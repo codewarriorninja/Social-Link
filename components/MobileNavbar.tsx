@@ -48,7 +48,7 @@ const MobileNavbar = () => {
                   </Link>
                 </Button>
                 <SignOutButton>
-                <Button variant="ghost" className="flex items-center gap-3 justify-start w-full">
+                <Button variant="ghost" className="flex items-center gap-3 justify-start w-full mx-4 cursor-pointer">
                     <LogOutIcon className="w-4 h-4" />
                     Logout
                   </Button> 
