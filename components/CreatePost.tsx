@@ -12,7 +12,6 @@ import { createPost } from "@/actions/postAction";
 import toast from "react-hot-toast";
 
 const CreatePost = () => {
-
     const {user} = useUser();
 
     const [content, setContent] = useState('')
