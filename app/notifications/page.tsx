@@ -42,7 +42,7 @@ function NotificationsPage() {
         const unreadIds = data.filter((n) => !n.read).map((n) => n.id);
         if (unreadIds.length > 0) await markNotificationsAsRead(unreadIds);
       } catch (error) {
-        toast.error("Failed to fetch notifications");
+        toast.error(`Failed to fetch notifications:${error}`);
       } finally {
         setIsLoading(false);
       }

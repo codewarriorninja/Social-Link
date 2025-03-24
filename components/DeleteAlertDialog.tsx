@@ -16,14 +16,14 @@ import {
 
 interface DeleteAlertDialogProps {
   isDeleting: boolean;
-  onDelete: () => Promise<void>;
+  onDeleteAction: () => Promise<void>;
   title?: string;
   description?: string;
 }
 
 export function DeleteAlertDialog({
   isDeleting,
-  onDelete,
+  onDeleteAction,
   title = "Delete Post",
   description = "This action cannot be undone.",
 }: DeleteAlertDialogProps) {
@@ -50,7 +50,7 @@ export function DeleteAlertDialog({
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction
-            onClick={onDelete}
+            onClick={onDeleteAction}
             className="bg-red-500 hover:bg-red-600"
             disabled={isDeleting}
           >

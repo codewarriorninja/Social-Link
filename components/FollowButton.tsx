@@ -15,7 +15,7 @@ const FollowButton = ({userId}:{userId:string}) => {
           await toggleFollow(userId);
           toast.success('User followed successfully');
         } catch (error) {
-         toast.error("Error following user");
+         toast.error(`Error following user:${error}`);
         }finally{
          setIsLoading(false)
         }

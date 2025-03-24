@@ -35,6 +35,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
       setOptmisticLikes((prev) => prev + (hasLiked ? -1 : 1));
       await toggleLike(post.id);
     } catch (error) {
+      console.error(error);
       setOptmisticLikes(post._count.likes);
       setHasLiked(post.likes.some((like) => like.userId === dbUserId));
     } finally {
@@ -52,7 +53,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
         setNewComment("");
       }
     } catch (error) {
-      toast.error("Failed to add comment");
+      toast.error(`Failed to add comment:${error}`);
     } finally {
       setIsCommenting(false);
     }
@@ -66,7 +67,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
       if (result.success) toast.success("Post deleted successfully");
       else throw new Error(result.error);
     } catch (error) {
-      toast.error("Failed to delete post");
+      toast.error(`Failed to delete post:${error}`);
     } finally {
       setIsDeleting(false);
     }
@@ -101,7 +102,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
                 </div>
                 {/* Check if current user is the post author */}
                 {dbUserId === post.author.id && (
-                  <DeleteAlertDialog isDeleting={isDeleting} onDelete={handleDeletePost} />
+                  <DeleteAlertDialog isDeleting={isDeleting} onDeleteAction={handleDeletePost} />
                 )}
               </div>
               <p className="mt-2 text-sm text-foreground break-words">{post.content}</p>
