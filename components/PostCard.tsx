@@ -121,7 +121,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
               <Button
                 variant="ghost"
                 size="sm"
-                className={`text-muted-foreground gap-2 ${
+                className={`text-muted-foreground gap-2 cursor-pointer ${
                   hasLiked ? "text-red-500 hover:text-red-600" : "hover:text-red-500"
                 }`}
                 onClick={handleLike}
@@ -145,7 +145,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground gap-2 hover:text-blue-500"
+              className="text-muted-foreground gap-2 cursor-pointer hover:text-blue-500"
               onClick={() => setShowComments((prev) => !prev)}
             >
               <MessageCircleIcon

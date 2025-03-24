@@ -33,7 +33,7 @@ export function DeleteAlertDialog({
         <Button
           variant="ghost"
           size="sm"
-          className="text-muted-foreground hover:text-red-500 -mr-2"
+          className="text-muted-foreground hover:text-red-500 -mr-2 cursor-pointer"
         >
           {isDeleting ? (
             <Loader2Icon className="size-4 animate-spin" />
