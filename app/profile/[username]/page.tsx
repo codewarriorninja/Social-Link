@@ -12,7 +12,6 @@ import { Metadata } from "next";
 type Params = Promise<{username:string}>
 
 
-
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { username } = await params;
 
