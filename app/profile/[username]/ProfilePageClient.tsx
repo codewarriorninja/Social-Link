@@ -1,5 +1,6 @@
 'use client'
-import { getProfileByUsername, updateProfile } from "@/actions/profileAction";
+
+import { getProfileByUsername,updateProfile } from "@/actions/profileAction";
 import { getUserPosts } from "@/actions/profileAction";
 import { toggleFollow } from "@/actions/userAction";
 import PostCard from "@/components/PostCard";

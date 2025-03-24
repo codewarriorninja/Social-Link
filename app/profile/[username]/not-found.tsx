@@ -13,7 +13,7 @@ const NotFound = () => {
                 <p className='text-8xl font-bold text-primary font-mono'>404</p>
                 <div className='space-y-2'>
                   <h1 className='text-2xl font-bold tracking-tight'>User not found</h1>
-                  <p className='text-muted-foreground'>The page you&apos;re looking for doesn&apos;t exist.</p>
+                  <p className='text-muted-foreground'>The user you&apos;re looking for doesn&apos;t exist.</p>
                 </div>
                 <div className='flex flex-col sm:flex-row gap-3 justify-center'>
                     <Button variant={'default'} asChild>

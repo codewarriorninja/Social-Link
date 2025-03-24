@@ -1,6 +1,6 @@
 "use client";
 
-import { createComment, deletePost, getPosts, toggleLike } from "@/actions/postAction";
+import { createComment,deletePost,getPosts,toggleLike } from "@/actions/postAction";
 import { SignInButton, useUser } from "@clerk/nextjs";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -111,7 +111,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
           {/* POST IMAGE */}
           {post.image && (
             <div className="rounded-lg overflow-hidden">
-              <Image src={post.image} alt="Post content" className="w-full h-auto object-cover" />
+              <Image src={post.image} alt="Post content" width={100} height={100} quality={100} className="w-full h-auto object-cover" />
             </div>
           )}
 
